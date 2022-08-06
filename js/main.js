@@ -223,10 +223,10 @@
 			var days = Math.floor(t / (1000 * 60 * 60 * 24));
 			return {
 				'total': t,
-				'days': days,
-				'hours': hours,
-				'minutes': minutes,
-				'seconds': seconds
+				'days': days > 0 ? days : '0',
+				'hours': hours > 0 ? hours : '0',
+				'minutes': minutes > 0 ? minutes : '0',
+				'seconds': seconds > 0 ? seconds : '0'
 			};
 		}
 
@@ -276,8 +276,7 @@
 			var timeinterval = setInterval(updateClock, 1000);
 		}
 		// set your wedding date here
-		console.log(new Date);
-		var deadline = 'Saturday August 27 2022 00:00:00 GMT+0700';
+		var deadline = 'Saturday August 07 2022 00:00:00 GMT+0700';
 		if (countdown){
 			initializeClock('timer', deadline);
 		}
