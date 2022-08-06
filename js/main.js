@@ -2,10 +2,10 @@
 	'use strict';
 
 	$(window).on('load', function() {
-		$('.loader').delay(500).fadeOut('slow');
-		// setTimeout(function() {
-		// 	$('.cover .display-tc').addClass('fadeInUp');
-		// }, 800);
+		$('.loader').delay(600).fadeOut('slow');
+		setTimeout(function() {
+			$('.cover .display-tc').addClass('fadeInUp');
+		}, 800);
 		
 	});
 
