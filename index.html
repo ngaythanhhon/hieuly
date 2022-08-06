@@ -91,9 +91,9 @@
 							<div class="display-tc animated">
 								<h1>Lễ Thành Hôn</h1>
 								<div class="banner-text">
-									<span class="banner-text_city">Hưng Yên <br>Việt Nam</span>
+									<span class="banner-text_city">Huyện Yên Mỹ<br>Tỉnh Hưng Yên</span>
 									<span class="banner-text_names">Minh Hiếu <br> & <br> Đỗ Ly</span>
-									<span class="banner-text_date">Ngày 27 tháng 8 <br>2022</span>
+									<span class="banner-text_date">Ngày 27 tháng 08 <br>2022</span>
 								</div>
 							</div>
 						</div>
@@ -314,7 +314,7 @@
 					<div class="col-md-12 text-center heading">
 						<span>Chúng mình yêu nhau</span>
 						<h2>Câu chuyện của chúng mình</h2>
-						<p>Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu sắc sẽ cho bạn dũng khí.</p>
+						<p>Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh. Trong khi yêu ai đó sâu sắc sẽ cho bạn dũng khí.</p>
 					</div>
 				</div>
 				<div class="row">
@@ -354,7 +354,7 @@
 								</div>
 								<div class="timeline-panel">
 									<div class="timeline-heading">
-										<h3 class="timeline-title">Ngỏ lời cưới em</h3>
+										<h3 class="timeline-title">Cầu hôn</h3>
 										<span class="date">Ngày 20 tháng 6 năm 2022</span>
 									</div>
 									<div class="timeline-body">
@@ -460,7 +460,7 @@
 					<div class="col-md-3 col-sm-6 animate-box">
 						<div class="feature-center">
 							<span class="counter-value js-counter" data-from="0" data-to="200" data-speed="5000" data-refresh-interval="50">1</span>
-							<span class="counter-label">Những đêm bên nhau</span>
+							<span class="counter-label">Những đêm không ngủ</span>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 animate-box">
@@ -514,7 +514,7 @@
 											<figure>
 												<img src="img/friend-3.jpg" alt="user">
 											</figure>
-											<span>Ánh Thùy</span>
+											<span>Mạnh Cường</span>
 											<blockquote>
 												<p>"Chúc mừng hai em và gia đình! Chúc cô dâu chú rể trăm năm hạnh phúc, thủy chung trọn vẹn, đi về có nhau. Dù sống đến tuổi răng long đầu bạc nhưng xem nhau như những ngày mới gặp. Đã chỉ non mà thề đã chỉ trăng mà hẹn thì phải giữ trọn tình yêu."</p>
 											</blockquote>
@@ -541,7 +541,7 @@
 		            <div class="col-md-12 text-center">
 		                <p>
 		                    <small class="block">&copy; 2022 Ngày thành hôn. </small>
-		                    <small class="block">Được tạo bởi <a href="https://www.facebook.com/thichmoongto.98/" target="_blank">vanhuy.98</a></small>
+		                    <small class="block">Được tạo bởi <a href="https://www.facebook.com/thichmoongto.98/" target="_blank">huycv.98</a></small>
 		                </p>
 		                <ul class="social-icons">
 		                    <li><a href="https://www.facebook.com/thichmoongto.98/"><i class="fa fa-twitter"></i></a></li>
@@ -553,21 +553,25 @@
 		        </div>
 		    </div>
 		</section>
-		<button onclick="offMp3()" type="button" class="btn1 btn-default btn-sound"><i class="fa fa-music" aria-hidden="true"></i></button>
-		<input type="hidden" value="1" id="myStatus">
-		<audio id="myAudio" controls autoplay style="display: none;">
-			<source src="img/BeautifulInWhite.mp3" type="audio/ogg">
+		<button id="onMp3" onclick="onMp3()" type="button" class="btn1 btn-default btn-sound">
+			<i class="fa fa-music" aria-hidden="true"></i>
+		</button>
+		<input id="myStatus" value="1" type="hidden">
+		<audio id="myAudio" controls style="display: none;">
 			<source src="img/BeautifulInWhite.mp3" type="audio/mpeg">
 		</audio>
 	</div>
 	<script>
-		function offMp3() {
+		function onMp3() {
 			var valueIput = document.getElementById("myStatus").value;
-			var x = document.getElementById("myAudio");
-			x.play()
-			valueIput == '1' ? valueIput = '0' : valueIput = '1'
-			valueIput == '1' ? x.play() : x.pause();
-			document.getElementById("myStatus").value = valueIput;
+			var audio = document.getElementById("myAudio");
+			if (valueIput == '1') {
+				audio.play();
+				document.getElementById("myStatus").value = '0';
+			} else{
+				audio.pause()
+				document.getElementById("myStatus").value = '1';
+			}
 		}
 	</script>
 	<!-- Modernizr JS -->
@@ -599,6 +603,4 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 </body>
-
-<!-- Mirrored from pavlyukpetr.com/projects/wedding-belle/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jun 2022 15:36:50 GMT -->
 </html>

@@ -196,7 +196,7 @@
 		            <div class="col-md-12 text-center">
 		                <p>
 		                    <small class="block">&copy; 2022 Ngày thành hôn. </small>
-		                    <small class="block">Được tạo bởi <a href="https://www.facebook.com/thichmoongto.98/" target="_blank">vanhuy.98</a></small>
+		                    <small class="block">Được tạo bởi <a href="https://www.facebook.com/thichmoongto.98/" target="_blank">huycv.98</a></small>
 		                </p>
 		                <ul class="social-icons">
 		                    <li><a href="https://www.facebook.com/thichmoongto.98/"><i class="fa fa-twitter"></i></a></li>
@@ -208,21 +208,25 @@
 		        </div>
 		    </div>
 		</section>
-		<button onclick="offMp3()" type="button" class="btn1 btn-default btn-sound"><i class="fa fa-music" aria-hidden="true"></i></button>
-		<input type="hidden" value="1" id="myStatus">
+		<button id="onMp3" onclick="onMp3()" type="button" class="btn1 btn-default btn-sound">
+			<i class="fa fa-music" aria-hidden="true"></i>
+		</button>
+		<input id="myStatus" value="1" type="hidden">
 		<audio id="myAudio" controls autoplay style="display: none;">
-			<source src="img/BeautifulInWhite.mp3" type="audio/ogg">
 			<source src="img/BeautifulInWhite.mp3" type="audio/mpeg">
 		</audio>
 	</div>
 	<script>
-		function offMp3() {
+		function onMp3() {
 			var valueIput = document.getElementById("myStatus").value;
-			var x = document.getElementById("myAudio");
-			x.play()
-			valueIput == '1' ? valueIput = '0' : valueIput = '1'
-			valueIput == '1' ? x.play() : x.pause();
-			document.getElementById("myStatus").value = valueIput;
+			var audio = document.getElementById("myAudio");
+			if (valueIput == '1') {
+				audio.play();
+				document.getElementById("myStatus").value = '0';
+			} else{
+				audio.pause()
+				document.getElementById("myStatus").value = '1';
+			}
 		}
 	</script>
 	<!-- Modernizr JS -->
