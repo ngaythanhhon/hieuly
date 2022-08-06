@@ -84,8 +84,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h1>Our wedding photos</h1>
-						<p>Joseph and Anna.</p>
+						<h1>Ảnh cưới</h1>
+						<p>Minh Hiếu & Đỗ Ly</p>
 					</div>
 				</div>
 			</div>
@@ -95,8 +95,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center heading">
-						<span>Our Memories</span>
-						<h2>Gallery albom photos</h2>
+						<span>Kỷ niệm của chúng tôi</span>
+						<h2>Thư viện ảnh cưới</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
 					</div>
 				</div>
@@ -188,27 +188,43 @@
 		    <div class="container">
 		        <div class="row">
 		            <div class="col-md-12 text-center">
-		                <h2>Just married</h2>
-		                <p>Joseph and Anna.</p>
+		                <h2>Ngày thành hôn</h2>
+		                <p>Minh hiếu & Đỗ Ly</p>
 		            </div>
 		        </div>
 		        <div class="row copyright">
 		            <div class="col-md-12 text-center">
 		                <p>
-		                    <small class="block">&copy; 2017 Wedding. All Rights Reserved.</small>
-		                    <small class="block">Created by <a href="#" target="_blank">FairyTheme</a></small>
+		                    <small class="block">&copy; 2022 Ngày thành hôn. </small>
+		                    <small class="block">Được tạo bởi <a href="https://www.facebook.com/thichmoongto.98/" target="_blank">vanhuy.98</a></small>
 		                </p>
 		                <ul class="social-icons">
-		                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-		                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-		                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-		                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+		                    <li><a href="https://www.facebook.com/thichmoongto.98/"><i class="fa fa-twitter"></i></a></li>
+		                    <li><a href="https://www.facebook.com/thichmoongto.98/"><i class="fa fa-facebook"></i></a></li>
+		                    <li><a href="https://www.facebook.com/thichmoongto.98/"><i class="fa fa-google-plus"></i></a></li>
+		                    <li><a href="https://www.facebook.com/thichmoongto.98/"><i class="fa fa-instagram"></i></a></li>
 		                </ul>
 		            </div>
 		        </div>
 		    </div>
 		</section>
+		<button onclick="offMp3()" type="button" class="btn1 btn-default btn-sound"><i class="fa fa-music" aria-hidden="true"></i></button>
+		<input type="hidden" value="1" id="myStatus">
+		<audio id="myAudio" controls autoplay style="display: none;">
+			<source src="img/BeautifulInWhite.mp3" type="audio/ogg">
+			<source src="img/BeautifulInWhite.mp3" type="audio/mpeg">
+		</audio>
 	</div>
+	<script>
+		function offMp3() {
+			var valueIput = document.getElementById("myStatus").value;
+			var x = document.getElementById("myAudio");
+			x.play()
+			valueIput == '1' ? valueIput = '0' : valueIput = '1'
+			valueIput == '1' ? x.play() : x.pause();
+			document.getElementById("myStatus").value = valueIput;
+		}
+	</script>
 	<!-- Modernizr JS -->
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
