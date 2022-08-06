@@ -48,7 +48,12 @@
 	</head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-	<div class="loader"></div>
+	<div class="loader">
+		<div id="preloader" style="display: block;">
+			<div id="status" style="display: block;"><img src="./img/love4.gif" id="preloader_image" alt="loader">
+			</div>
+		</div>
+	</div>
 	<div class="main">
 		<!-- Navigation -->
 		<nav class="navbar" data-spy="affix" data-options="scrolltop:false">
@@ -142,7 +147,7 @@
 					<div class="col-sm-12">
 						<div id="timer" class="timer text-center">
 							<div class="timer-item timer-item_text">
-								Chỉ vài giờ ...
+								Chỉ còn vài <span id="time_end"></span> ...
 							</div>
 							<div class="timer-item_digits">
 								<div class="timer-item">
@@ -171,7 +176,7 @@
 								</div>
 							</div>
 							<div class="timer-item timer-item_text">
-								... cho đến khi chúng tôi kết hôn!
+								<span id="time__end">... cho đến khi chúng tôi kết hôn!</span>
 							</div>
 						</div>
 					</div>
@@ -184,7 +189,7 @@
 				<div class="row">
 					<div class="col-md-12 text-center heading">
 						<span>Sự kiện đặc biệt của chúng tôi</span>
-						<h2 style="font-family: 'Amatic SC';">Sự kiện cưới</h2>
+						<h2>Sự kiện cưới</h2>
 						<p>Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến đi đáng giá.</p>
 					</div>
 				</div>

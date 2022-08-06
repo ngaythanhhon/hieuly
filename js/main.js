@@ -2,10 +2,10 @@
 	'use strict';
 
 	$(window).on('load', function() {
-		$('.loader').delay(600).fadeOut('slow');
-		setTimeout(function() {
-			$('.cover .display-tc').addClass('fadeInUp');
-		}, 800);
+		$('.loader').delay(500).fadeOut('slow');
+		// setTimeout(function() {
+		// 	$('.cover .display-tc').addClass('fadeInUp');
+		// }, 800);
 		
 	});
 
@@ -221,6 +221,19 @@
 			var minutes = Math.floor((t / 1000 / 60) % 60);
 			var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
 			var days = Math.floor(t / (1000 * 60 * 60 * 24));
+			if (days > 0) {
+				$("#time_end").text("ngày");
+			} else if (days <= 0 && hours > 0) {
+				$("#time_end").text("giờ");
+			} else if (days <= 0 && hours <= 0 && minutes > 0) {
+				$("#time_end").text("phút");
+			} else if (days <= 0 && hours <= 0 && minutes <= 0) {
+				$("#time_end").text("giây");
+			} else if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+				var deadline = 'Monday August 29 2022 00:00:00 GMT+0700';
+				$("#time__end").text("... lễ thành hôn chúng tôi sẽ kết thúc!");
+				initializeClock('timer', deadline)
+			}
 			return {
 				'total': t,
 				'days': days > 0 ? days : '0',
