@@ -2048,11 +2048,12 @@ footer .copyright .block {
     background: #084298;
     color: #fff;
     transform: translateX(-50%);
+	width: 97%;
 }
 .hiddenPopupDetail{
     animation-name: topToHidden;
-    animation-duration: .4s;
-    z-index: 10000000;
+    animation-duration: .5s;
+    z-index: 10000;
     position: fixed;
     top: -1000px;
     left: 50%;
