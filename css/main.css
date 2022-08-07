@@ -2022,3 +2022,42 @@ footer .copyright .block {
     -o-transform: translate(-50%,-50%);
 	display: block;
 }
+@keyframes topToShow {
+    from {
+      top: -10px;
+    }
+    to {
+      top: 10px;
+    }
+  }
+@keyframes topToHidden {
+    from {
+        top: 10px;
+    }
+    to {
+        top: -100px;
+    }
+}
+.showPopupDetail{
+    animation-name: topToShow;
+    animation-duration: .4s;
+    z-index: 10000000;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    background: #084298;
+    color: #fff;
+    transform: translateX(-50%);
+}
+.hiddenPopupDetail{
+    animation-name: topToHidden;
+    animation-duration: .4s;
+    z-index: 10000000;
+    position: fixed;
+    top: -1000px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.error{
+	border: 1px solid red
+}

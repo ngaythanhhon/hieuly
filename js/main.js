@@ -6,10 +6,10 @@
 		setTimeout(function() {
 			$('.cover .display-tc').addClass('fadeInUp');
 		}, 800);
-		var audio = document.createElement("AUDIO")
-		document.body.appendChild(audio);
-		audio.src = "./img/BeautifulInWhite.mp3"
-		audio.play()
+		// var audio = document.createElement("AUDIO")
+		// document.body.appendChild(audio);
+		// audio.src = "./img/BeautifulInWhite.mp3"
+		// audio.play()
 	});
 
 	// Form

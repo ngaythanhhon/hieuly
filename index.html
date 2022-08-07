@@ -527,6 +527,48 @@
 				</div>
 			</div>
 		</section>
+		<section id="invitation" class="section invitation section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center heading">
+						<h2>Hãy viết lời chúc phúc tới chúng mình</h2>
+						<p>Chỉ thời gian ngắn nữa thôi chúng mình sẽ về một nhà. Hội anh chị em người yêu cũ, bạn bè hãy viết lên lời chúc cho chúng mình nhé</p>
+					</div>
+				</div>
+				<div class="row h-flex-md">
+					<div class="form-wrapper col-md-6">
+						<h3 class="invitation_heading">Sẽ thật tuyệt khi chúng mình nhận được lời chúc phúc từ bạn!</h3>
+						<div class="row">
+							<div id="name-field" class="form-field col-sm-12">
+								<label for="form-name" class="control-label">Tên của bạn*</label>
+								<input type="text" class="form-control" id="form-name" name="form-name" required="">
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-field col-sm-12">
+								<label for="form-name" class="control-label">Lời nhắn của bạn đến chúng tôi*</label>
+								<textarea class="form-control" name="note" id="note" cols="30" rows="10"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="guest-list form-field col-sm-12"></div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<button type="button" class="btn btn-outline-black btn-lg send-button" onclick="sendMail(); return false">Gửi</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="video bg">
+							<a href="https://www.youtube.com/watch?v=KPi8uXHRfYg" class="popup-youtube">
+								<i class="fa fa-youtube-play fa-4x"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!-- Section banner-bottom -->
 		<section class="bg section banner banner_bottom">
 		    <div class="overlay"></div>
@@ -560,6 +602,9 @@
 		<audio id="myAudio" controls style="display: none;">
 			<source src="img/BeautifulInWhite.mp3" type="audio/mpeg">
 		</audio>
+		<div id="popup" style="display: none" class="alert alert-primary showPopupDetail" role="alert">
+			<span>Chúng mình đã nhận được lời chúc phúc, cảm ơn bạn  rất nhiều!</span>
+		</div>
 	</div>
 	<script>
 		function onMp3() {
@@ -572,6 +617,47 @@
 				audio.pause()
 				document.getElementById("myStatus").value = '1';
 			}
+		}
+		function sendMail() {
+			var textName = $("#form-name").val();
+			var textNote = $("#note").val();
+			var elementName = document.getElementById("form-name");
+			var elementNote = document.getElementById("note");
+			if (textName != "" && textNote != "") {
+				document.getElementById('form-name').value = "";
+				document.getElementById('note').value = "";
+				$(".showPopupDetail").css("display", "block");
+				var element_popup = document.getElementById("popup");
+				element_popup.classList.remove("hiddenPopupDetail");
+				setTimeout(() => {
+					var element_hidden_popup = document.getElementById("popup");
+					element_hidden_popup.classList.add("hiddenPopupDetail");
+					setTimeout(() => {
+						$(".showPopupDetail").css("display", "none");
+								var link = "mailto:vanhuyutehy98@gmail.com"
+								+ "?cc=huy.cv@zinza.com.vn"
+								+ "&subject=" + encodeURIComponent("Gửi lời chúc phúc 2 bạn Hiêu - Ly")
+								+ "&body= Lời chúc của bạn " + encodeURIComponent(document.getElementById('form-name').value)  + " muốn gửi đến 2 bạn với lời nhắn: " +  encodeURIComponent(document.getElementById('note').value)
+						;
+						window.location.href = link;
+						elementName.classList.remove("error");
+						elementNote.classList.remove("error");
+					}, 1500);
+				}, 1000);
+			}
+			else{
+				if (textName == "") {
+					elementName.classList.add("error");
+				} else{
+					elementName.classList.remove("error");
+				}
+				if (textNote == "") {
+					elementNote.classList.add("error");
+				}else{
+					elementNote.classList.remove("error");
+				}
+			}
+			
 		}
 	</script>
 	<!-- Modernizr JS -->
