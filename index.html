@@ -624,8 +624,6 @@
 			var elementName = document.getElementById("form-name");
 			var elementNote = document.getElementById("note");
 			if (textName != "" && textNote != "") {
-				document.getElementById('form-name').value = "";
-				document.getElementById('note').value = "";
 				$(".showPopupDetail").css("display", "block");
 				var element_popup = document.getElementById("popup");
 				element_popup.classList.remove("hiddenPopupDetail");
@@ -640,6 +638,8 @@
 								+ "&body= Lời chúc của bạn " + encodeURIComponent(document.getElementById('form-name').value)  + " muốn gửi đến 2 bạn với lời nhắn: " +  encodeURIComponent(document.getElementById('note').value)
 						;
 						window.location.href = link;
+						document.getElementById('form-name').value = "";
+						document.getElementById('note').value = "";
 						elementName.classList.remove("error");
 						elementNote.classList.remove("error");
 					}, 1500);
